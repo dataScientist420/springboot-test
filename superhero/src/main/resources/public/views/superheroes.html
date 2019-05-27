@@ -1,0 +1,24 @@
+<div class="container pad-top">
+  <a ui-sref="newSuperhero" class="btn-primary btn-lg nodecoration">Create Superhero</a>
+    <!--
+    <a ui-sref="viewSuperhero" class="btn-primary btn-lg nodecoration">Read Superhero</a>
+    <a ui-sref="updateSuperhero" class="btn-primary btn-lg nodecoration">Update Superhero</a>
+    -->
+  <table class="table superherotable">
+      <tr>
+          <td><h3>All Superheroes</h3></td>
+          <td></td>
+      </tr>
+      <tr ng-repeat="superhero in superheroes">
+          <td>{{superhero.name}}</td>
+          <td>{{superhero.description}}</td>
+          <td>{{superhero.age}}</td>
+          <td>{{superhero.height}}</td>
+          <td>{{superhero.weight}}</td>
+          <td>
+              <a class="btn btn-primary" ui-sref="viewSuperhero({id:superhero.id})">View</a>
+              <a class="btn btn-danger"  ng-click="deleteSuperhero(superhero)">Delete</a>
+          </td>
+      </tr>
+  </table>
+</div>
