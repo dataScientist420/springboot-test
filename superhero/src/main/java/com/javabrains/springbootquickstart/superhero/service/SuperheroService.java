@@ -24,7 +24,7 @@ public class SuperheroService {
         for (Superhero hero: superheroes) {
             System.out.println("Inserting data for superhero name:" + hero.getName());
 
-            jdbcTemplate.update("insert into superheroes values (?, ?, ?)",
+            jdbcTemplate.update("insert into superheroes(name, description, age) values (?, ?, ?)",
                     preparedStatement -> {
                         preparedStatement.setString(1, hero.getName());
                         preparedStatement.setString(2, hero.getDescription());

@@ -21,11 +21,12 @@ public class SuperheroRunner implements CommandLineRunner {
 
         try {
             Superhero hero1 = new Superhero("Vlad", "Dracula", 1000);
-            //Superhero hero2 = new Superhero("Jim", "Super Jim", 1);
-            heroService.insert(Arrays.asList(hero1));
+            Superhero hero2 = new Superhero("Batman", "Bruce Wayne", 32);
+            heroService.insert(Arrays.asList(hero1, hero2));
             heroService.getSuperheroes();
         } catch (RuntimeException e) {
             System.out.println("Transaction exception: " + e.getMessage());
         }
+        System.out.println(heroService.getSuperheroes());
     }
 }

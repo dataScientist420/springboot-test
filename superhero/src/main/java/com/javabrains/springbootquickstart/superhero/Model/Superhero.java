@@ -1,6 +1,7 @@
 package com.javabrains.springbootquickstart.superhero.Model;
 
 public class Superhero {
+
     private String name;
     private String description;
     private int age;
