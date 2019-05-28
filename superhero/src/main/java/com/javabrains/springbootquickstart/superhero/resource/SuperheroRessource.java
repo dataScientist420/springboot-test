@@ -28,10 +28,8 @@ public class SuperheroRessource {
     @GetMapping("/{superhero}")
     public Superhero getSuperhero(@PathVariable("superhero name") final String name,
                                   @PathVariable("superhero description") final String description,
-                                  @PathVariable("superhero age") final int age,
-                                  @PathVariable("superhero height") final int height,
-                                  @PathVariable("superhero weight") final int weight) {
-        return new Superhero(name, description, age, height, weight);
+                                  @PathVariable("superhero age") final int age) {
+        return new Superhero(name, description, age);
     }
 
     private class Superhero {
@@ -45,30 +43,34 @@ public class SuperheroRessource {
         @ApiModelProperty(notes = "age of the superhero")
         private int age;
 
-        @ApiModelProperty(notes = "height of the superhero")
-        private int height;
-
-        @ApiModelProperty(notes = "weight of the superhero")
-        private int weight;
-
-        public Superhero(String name, String description, int age, int height, int weight) {
+        public Superhero(String name, String description, int age) {
             this.name = name;
             this.description = description;
             this.age = age;
-            this.height = height;
-            this.weight = weight;
         }
 
-        public String getName() { return this.name; }
-        public String getDescription() { return this.description; }
-        public int getAge() { return this.age; }
-        public int getHeight() { return this.height; }
-        public int getWeight() { return this.weight; }
+        public String getName() {
+            return name;
+        }
 
-        public void setName(String name) { this.name = name; }
-        public void setDescription(String description) { this.description = description; }
-        public void setAge(int age) { this.age = age; }
-        public void setHeight(int height) { this.height = height; }
-        public void setWeight(int weight) { this.weight = weight; }
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public String getDescription() {
+            return description;
+        }
+
+        public void setDescription(String description) {
+            this.description = description;
+        }
+
+        public int getAge() {
+            return age;
+        }
+
+        public void setAge(int age) {
+            this.age = age;
+        }
     }
 }
